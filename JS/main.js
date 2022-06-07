@@ -9,7 +9,6 @@ const maxspeed= 30;
 
 const img = document.createElement('img')
 
-
 const backgroundImage = {
   img: img,
   x:-10, // commence direct a droite (evite un flash degeu)
