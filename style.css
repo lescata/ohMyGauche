@@ -1,4 +1,49 @@
-canvas {
+/*canvas {
     border: solid 1px black;
-}
+}*/
 
+body {
+    margin:40px;
+  
+    font-size: 18px;
+    font-family: "Arial";
+    background-color: black;
+    color: white;
+  }
+  
+  body {display:flex; min-height:100vh;}
+  body >div {flex:1;}
+  
+  .game-intro {
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+  }
+  
+  .logo-img {
+    width: 350px;
+  }
+  
+  .arrows-img {
+    width: 200px;
+  }
+  
+  body button {
+    font-size: 30px;
+    background-color: #ffffff;
+    color: rgb(163, 0, 0);
+    padding: 20px 40px;
+    border: 0;
+    border-radius: 25px;
+    margin-bottom: 20px;
+  }
+  
+  #game-board {
+    padding: 20px 0px;
+  }
+  #game-board {position:relative;}
+  #game-board canvas {
+    position:absolute; left:0;top:0;
+    width:100%; height:100%;
+    object-fit:contain;
+  }
+  

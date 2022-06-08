@@ -9,6 +9,7 @@ const maxspeed= 30;
 
 const img = document.createElement('img')
 
+
 const backgroundImage = {
   img: img,
   x:-10, // commence direct a droite (evite un flash degeu)
@@ -20,7 +21,7 @@ const backgroundImage = {
   },
 
   draw: function() {
-    ctx.drawImage(this.img, this.x,0);
+    ctx.drawImage(this.img, this.x, 0);
     ctx.drawImage(this.img, this.x + canvas.width, 0);
   },
 };
@@ -32,8 +33,8 @@ function updateCanvas() {
 
 img.onload = updateCanvas;
 
-img.src = 'https://res.cloudinary.com/du5v6izdd/image/upload/v1654349713/Game/background1_nzrzkx.png';
-
+//img.src = 'https://res.cloudinary.com/du5v6izdd/image/upload/v1654349713/Game/background1_nzrzkx.png';
+img.src ='https://res.cloudinary.com/du5v6izdd/image/upload/v1654706539/Game/raw3layerBackground_dc1yiy.png'
 
 
 
