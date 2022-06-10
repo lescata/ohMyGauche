@@ -7,8 +7,14 @@ const H = $canvas.height;
 const gravity = 2;
 const maxspeed= 30;
 
+let currentGame;
+let currentPlayer;
+
 const img = document.createElement('img')
 
+document.getElementById('start-button').onclick =()=>{
+  startGame();
+}
 
 const backgroundImage = {
   img: img,
@@ -125,6 +131,12 @@ function animationLoop() {
   requestAnimationFrame(animationLoop);
 }
 requestAnimationFrame(animationLoop)
+
+function startGame(){
+  currentGame = new Game();
+  currentPlayer = new Melanchon();
+
+}
 
 
 

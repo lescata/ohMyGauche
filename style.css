@@ -3,8 +3,7 @@
 }*/
 
 body {
-    margin:40px;
-  
+    margin:0;
     font-size: 18px;
     font-family: "Arial";
     background-color: black;
@@ -14,9 +13,13 @@ body {
   body {display:flex; min-height:100vh;}
   body >div {flex:1;}
   
-  .game-intro {
+  .presentation {
     display:flex; flex-direction:column;
     justify-content:center; align-items:center;
+  }
+  .tips{
+      color: #902227;
+      font-size: 15px;
   }
   
   .logo-img {
@@ -24,13 +27,13 @@ body {
   }
   
   .arrows-img {
-    width: 200px;
+    width: 150px;
   }
   
   body button {
     font-size: 30px;
-    background-color: #ffffff;
-    color: rgb(163, 0, 0);
+    background-color:#fff ;
+    color: #902227;
     padding: 20px 40px;
     border: 0;
     border-radius: 25px;

@@ -22,7 +22,7 @@ class Melanchon {
       this.vy = -25;
     }
     forward() {
-        this.vx=5; //avance de 5px
+      this.vx= 5; //avance de 5px
     }
     backward(){
         this.vx = -5;//recule de 5px
@@ -35,9 +35,18 @@ class Melanchon {
     if (this.vy > maxspeed){
         this.vy = maxspeed;
         }
+        
 
         this.x += this.vx;
         this.y += this.vy;
+
+    if (this.x > 300){
+      this.X = 300
+    }
+    if (this.x < -40){
+      this.vx =0
+    }
+    
     
     if (this.y + this.h > sol){ 
         console.log('floor limit reach')
