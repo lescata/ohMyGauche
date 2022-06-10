@@ -36,12 +36,11 @@ class Melanchon {
         this.vy = maxspeed;
         }
         
-
         this.x += this.vx;
         this.y += this.vy;
 
-    if (this.x > 300){
-      this.X = 300
+    if (this.x > 540){
+      this.x = 500
     }
     if (this.x < -40){
       this.vx =0

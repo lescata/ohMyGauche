@@ -83,30 +83,7 @@ document.onkeydown = function (e) {
       break;
   }
 }
-/*document.onkeydown = function (el){
-  switch (el.keycode){
-    case 38:
-      if(pressed.arrowup) return;//if touche appuyer dont dot it
-      console.log('ici ca marche')// saute
-      pressed.up = true;
-      mimich.jump();
-      break;
 
-    case 37:
-      if (pressed.arrowleft)return;
-      console.log('ici ca marche')
-      pressed.arrowleft = true;// en avant 
-      mimich.backward();
-      break;
-
-    case 39:
-      if (pressed.arrowright) return;
-      console.log('ici ca marche')
-      pressed.arrowright = true;// en arriere 
-      mimich.forward();
-      break;
-  }
-}*/
 
 document.onkeyup = function (e) {
   switch (e.keyCode) {
@@ -130,35 +107,11 @@ function animationLoop() {
   draw();
   requestAnimationFrame(animationLoop);
 }
-requestAnimationFrame(animationLoop)
+
 
 function startGame(){
-  currentGame = new Game();
-  currentPlayer = new Melanchon();
+  requestAnimationFrame(animationLoop);
+  //currentGame = new Game();
+  //currentPlayer = new Melanchon();
 
-}
-
-
-
-/*document.addEventListener('keydown', function (event) {
-  console.log('keyCode=', event)
-  
-  if (event.key === 'ArrowRight') {
-    ctx.clearRect(0,0,550,700)
-    console.log('RIGHT baby')
-    mimich.x += 20
-    mimich.draw()
-  }
-  if (event.key === 'ArrowLeft') {
-    ctx.clearRect(0,0,550,700)
-    console.log('LEFT baby')
-    mimich.x -= 20
-    mimich.draw()
-  }
-  if (event.key === 'ArrowUp') {
-    ctx.clearRect(0,0,550,700)
-    console.log('UP baby')
-    mimich.y -= 20
-    mimich.draw()
-  }
-})*/
+} 

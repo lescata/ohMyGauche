@@ -7,7 +7,7 @@ class Obstacle {
     }
 
     drawObstacle() {
-        ctx.fillStyle = 'orange';
+        ctx.fillStyle = 'red';
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 }
