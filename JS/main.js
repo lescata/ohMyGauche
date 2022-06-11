@@ -7,8 +7,11 @@ const H = $canvas.height;
 const gravity = 2;
 const maxspeed= 30;
 
-let currentGame;
-let currentPlayer;
+let loopCount= 0;
+let score=0;
+
+
+let obstacles=[];
 
 const img = document.createElement('img')
 
@@ -42,8 +45,6 @@ img.onload = updateCanvas;
 //img.src = 'https://res.cloudinary.com/du5v6izdd/image/upload/v1654349713/Game/background1_nzrzkx.png';
 img.src ='https://res.cloudinary.com/du5v6izdd/image/upload/v1654706539/Game/raw3layerBackground_dc1yiy.png'
 
-
-
 // test background// 
 var mimich = new Melanchon()
 
@@ -51,7 +52,12 @@ function draw (){
   ctx.clearRect(0, 0, W, H)//on commence par tous efface 
   mimich.update()//on update la position de Melanchon
   updateCanvas()
-  mimich.paint();//on imprime a lecran 
+  mimich.paint();//on imprime a lecran
+  obstacles.forEach(element => {
+    element.x -= 3.5
+    element.drawObstacle()
+  });
+  
 }
 const pressed = {
   arrowup: false,
@@ -103,15 +109,39 @@ document.onkeyup = function (e) {
   }
 }
 
+function scoreUpdate(){
+  score= Math.floor(loopCount/10);
+  document.getElementById('score').innerHTML =score;
+}
+
+function checkcrash(){
+  console.log("chechcrash")
+   for(let i =0; i< obstacles.length;i++){
+     if (obstacles[i].crashWith(mimich)) {
+       return true
+     }
+   }
+   return false
+}
+
 function animationLoop() {
   draw();
+
+  if (loopCount%150 ===0 ) {
+    obstacles.push(new Obstacle())
+  }
+
+  scoreUpdate();
+  loopCount ++;
+  if (!checkcrash()){
   requestAnimationFrame(animationLoop);
+  }
+  else {
+    alert('GAME OVER, Marine won, Zemour will soon become a king, all of this because of YOU... ')
+  }
 }
 
 
 function startGame(){
   requestAnimationFrame(animationLoop);
-  //currentGame = new Game();
-  //currentPlayer = new Melanchon();
-
 } 
