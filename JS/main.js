@@ -9,7 +9,12 @@ const maxspeed= 30;
 
 let loopCount= 0;
 let score=0;
-
+ let gameOverImage
+const image = document.createElement("img"); // <img>
+    image.src ="https://res.cloudinary.com/du5v6izdd/image/upload/v1654944939/Game/game-over_e1esvu.png"; // telechargement GO
+    image.onload = () => {
+      gameOverImage = image;
+    };
 
 let obstacles=[];
 
@@ -137,7 +142,7 @@ function animationLoop() {
   requestAnimationFrame(animationLoop);
   }
   else {
-    alert('GAME OVER, Marine won, Zemour will soon become a king, all of this because of YOU... ')
+    ctx.drawImage(gameOverImage, 0, 233, 500,234)
   }
 }
 
